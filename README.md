@@ -8,6 +8,7 @@ From Composer export all media to a file named allC4Music.xml in this directory
 
 From Apple Music Export the playlists that you want in C4 into this directory
 to make it easier when exporting name the file with no spaces or funny characters
+(you'll be able to choose a Playlist name during the conversion)
 
 if you want to start with a clean list of playlists delete the file C4Playlists.xml
 Otherwise it will add to the playlists already in that file
