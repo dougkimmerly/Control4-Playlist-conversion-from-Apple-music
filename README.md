@@ -19,6 +19,10 @@ then it will ask what you want the C4 playlist to be named
 
 when done (a few seconds) it will display that it is complete 
 
+You can continue to add playlists to the file by just re-running the command and choosing 
+a different playlist.  When done you will have a file named C4Playlists.xml that will contain 
+all your playlists in C4 format.
+
 go to Composer in the media section Import Playlists (right click on playlists) 
 
 Choose the file in this directory named C4Playlists.xml
