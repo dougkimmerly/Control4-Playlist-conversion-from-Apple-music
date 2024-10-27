@@ -7,24 +7,26 @@ that C4 uses.
 From Composer export all media to a file named allC4Music.xml in this directory
 
 From Apple Music Export the playlists that you want in C4 into this directory
-to make it easier when exporting name the file with no spaces or funny characters
-(you'll be able to choose a Playlist name during the conversion)
-
-if you want to start with a clean list of playlists delete the file C4Playlists.xml
-Otherwise it will add to the playlists already in that file
+The files must be named starting with a small "a" then the name you want to see in C4
+ending of course with ".xml"  example is "aDinner Music.xml" and put into the working
+directory where you have the convertPlaylist.py script.  Export all the playlists you 
+want to have in C4, this also serves as a backup of your Apple playlists.
 
 run python3 convertPlaylist.py
 
-It will ask you which file you want to convert from the Apple format
-then it will ask what you want the C4 playlist to be named
+The script will first of all delete a file of C4Playlists.xml if it exists and then 
+recreate it.  This is because C4 will only import all the playlists at once not each 
+one individually.  So the import replaces all the playlists at once with the contents 
+of the C4Playlists.xml file
 
-when done (a few seconds) it will display that it is complete 
+As it processes it will display messages letting you know each playlist converted.
+"Conversion complete for aClassical.xml. The Control4 playlist is saved to: C4Playlists.xml"
 
-You can continue to add playlists to the file by just re-running the command and choosing 
-a different playlist.  When done you will have a file named C4Playlists.xml that will contain 
-all your playlists in C4 format.
+Since C4 can only accept a playlist of less than 500 tracks each playlist in C4 will be 
+named as everything in between the "a" and ".xml" with a number appended to it
+Such as "Classical01" and "Classical02" in the above example.
 
-go to Composer in the media section Import Playlists (right click on playlists) 
+Now go to Composer and in the media section Import Playlists (right click on playlists) 
 
 Choose the file in this directory named C4Playlists.xml
 
