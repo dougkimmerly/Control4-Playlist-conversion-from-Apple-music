@@ -15,7 +15,7 @@ From Apple Music Export the playlists that you want in C4 into this directory
 The files must be named starting with a small "a" then the name you want to see in C4
 ending of course with ".xml"  example is "aDinner Music.xml" and put into the working
 directory where you have the convertPlaylist.py script.  Export all the playlists you 
-want to have in C4, this also serves as a backup of your Apple playlists.
+want to have in C4, this directory also serves as a backup of your Apple and C4 playlists.
 
 run python3 convertPlaylist.py
 
