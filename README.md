@@ -1,6 +1,11 @@
 
 This script will take Apple Music playlists and convert the format so it can be 
-imported into Control4.  Since C4 uses its own internal numbers to identify the tracks
+imported into Control4.  This way you can use Apple Music to control and update all
+the playlists on your NAS and then simply import them into Control 4 for playing 
+on the system.
+
+
+Since C4 uses its own internal numbers to identify the tracks
 you need to first export all the media to a file so the script can look up the numbers
 that C4 uses.
 
@@ -24,7 +29,8 @@ As it processes it will display messages letting you know each playlist converte
 
 Since C4 can only accept a playlist of less than 500 tracks each playlist in C4 will be 
 named as everything in between the "a" and ".xml" with a number appended to it
-Such as "Classical01" and "Classical02" in the above example.
+Such as "Classical01" and "Classical02" in the above example.  You can rename the playlist
+in C4 if you want after import.
 
 Now go to Composer and in the media section Import Playlists (right click on playlists) 
 
