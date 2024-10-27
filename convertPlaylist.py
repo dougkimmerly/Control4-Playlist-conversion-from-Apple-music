@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import os
+import glob
 
 # Function to load Control4 song mapping from XML
 def load_control4_song_mapping(control4_file):
@@ -100,18 +101,25 @@ def create_new_playlist(root, playlists, base_name, number):
 # Main execution
 if __name__ == "__main__":
     control4_file = 'allC4Music.xml'  # Location of the Control4 music XML
-    
-    # Prompt for input file and base playlist name
-    input_file = input("Enter the Apple Music export file path (e.g., 'SpaOnly.xml'): ")
-    base_playlist_name = input("Enter the base playlist name (e.g., 'Dinner Music'): ")
-    
     output_file = 'C4Playlists.xml'  # Desired output file location
+
+    # Delete the output file if it exists
+    if os.path.exists(output_file):
+        os.remove(output_file)
 
     # Load the Control4 song mapping from the exported XML
     control4_mapping = load_control4_song_mapping(control4_file)
 
-    # Convert the Apple Music file to Control4 format using the mapping
-    convert_apple_music_to_control4(input_file, output_file, control4_mapping, base_playlist_name)
+    # Process each XML file that starts with "a", ends with ".xml", and is not 'allC4Music.xml'
+    for input_file in glob.glob('a*.xml'):
+        if input_file == control4_file:
+            continue  # Skip the 'allC4Music.xml' file
+        
+        # Extract the base playlist name from the input file name
+        base_playlist_name = input_file[1:-4]  # Get the name between 'a' and '.xml'
 
-    print("Conversion complete. The Control4 playlist is saved to:", output_file)
+        # Convert the Apple Music file to Control4 format using the mapping
+        convert_apple_music_to_control4(input_file, output_file, control4_mapping, base_playlist_name)
+
+        print(f"Conversion complete for {input_file}. The Control4 playlist is saved to: {output_file}")
 
