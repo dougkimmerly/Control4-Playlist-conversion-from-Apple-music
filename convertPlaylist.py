@@ -100,7 +100,7 @@ def create_new_playlist(root, playlists, base_name, number):
 
 # Main execution
 if __name__ == "__main__":
-    control4_file = 'allC4Music.xml'  # Location of the Control4 music XML
+    control4_file = 'FullC4MusicList.xml'  # Location of the Control4 music XML
     output_file = 'C4Playlists.xml'  # Desired output file location
 
     # Delete the output file if it exists
@@ -110,13 +110,13 @@ if __name__ == "__main__":
     # Load the Control4 song mapping from the exported XML
     control4_mapping = load_control4_song_mapping(control4_file)
 
-    # Process each XML file that starts with "a", ends with ".xml", and is not 'allC4Music.xml'
-    for input_file in glob.glob('a*.xml'):
+    # Process each XML file, excluding 'FullC4MusicList.xml'
+    for input_file in glob.glob('*.xml'):
         if input_file == control4_file:
-            continue  # Skip the 'allC4Music.xml' file
+            continue  # Skip the 'FullC4MusicList.xml' file
         
         # Extract the base playlist name from the input file name
-        base_playlist_name = input_file[1:-4]  # Get the name between 'a' and '.xml'
+        base_playlist_name = input_file[:-4]  # Get the name before '.xml'
 
         # Convert the Apple Music file to Control4 format using the mapping
         convert_apple_music_to_control4(input_file, output_file, control4_mapping, base_playlist_name)
