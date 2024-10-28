@@ -9,13 +9,9 @@ Since C4 uses its own internal numbers to identify the tracks
 you need to first export all the media to a file so the script can look up the numbers
 that C4 uses.
 
-From Composer export all media to a file named allC4Music.xml in this directory
+From Composer export all media to a file named FullC4MusicList.xml in this directory
 
-From Apple Music Export the playlists that you want in C4 into this directory
-The files must be named starting with a small "a" then the name you want to see in C4
-ending of course with ".xml"  example is "aDinner Music.xml" and put into the working
-directory where you have the convertPlaylist.py script.  Export all the playlists you 
-want to have in C4, this directory also serves as a backup of your Apple and C4 playlists.
+From Apple Music Export the playlists that you want in C4 into this directory where you have the convertPlaylist.py script.  Export all the playlists you want to have in C4, this directory also serves as a backup of your Apple and C4 playlists.
 
 run python3 convertPlaylist.py
 
@@ -25,10 +21,10 @@ one individually.  So the import replaces all the playlists at once with the con
 of the C4Playlists.xml file
 
 As it processes it will display messages letting you know each playlist converted.
-"Conversion complete for aClassical.xml. The Control4 playlist is saved to: C4Playlists.xml"
+"Conversion complete for Classical.xml. The Control4 playlist is saved to: C4Playlists.xml"
 
 Since C4 can only accept a playlist of less than 500 tracks each playlist in C4 will be 
-named as everything in between the "a" and ".xml" with a number appended to it
+named as the saved file from Apple Music with a number appended to it
 Such as "Classical01" and "Classical02" in the above example.  You can rename the playlist
 in C4 if you want after import.
 
