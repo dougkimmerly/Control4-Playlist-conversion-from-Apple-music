@@ -37,3 +37,8 @@ it will replace all the playlists in C4 with what is now in that file
 One note not documented anywhere is that in order to get C4 to connect to a shared drive 
 the password used for the user can't have any special characters in it or C4 does not make 
 the connection.
+
+Also it seems there is a problem with the automatic scanning of the network music directory.
+I've opted now to just scan manually when I update the playlists manually that way all the 
+internal numbers pointing to the music files stay intact and the playlists continue to 
+work.
